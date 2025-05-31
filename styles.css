@@ -1201,6 +1201,11 @@ iframe[title="ticker tape TradingView widget"] {
     text-shadow: 0 2px 16px #a259ff88;
 }
 @media (max-width: 700px) {
+    .navbar-minimal {
+        height: 70px;
+        min-height: 70px;
+        align-items: center;
+    }
     .navbar-minimal ul {
         gap: 10px;
         flex-wrap: wrap;
