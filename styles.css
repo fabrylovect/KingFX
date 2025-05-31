@@ -50,22 +50,32 @@ body::before {
 
 /* Hero Section */
 .hero {
+    margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 60vh;
     padding: 60px 0 40px 0;
-    background: linear-gradient(120deg, #23235b 0%, #2d1e4f 100%);
+    background: url('sfondolanding.png') top center repeat-x;
+    background-size: auto;
+    position: relative;
 }
 
-.hero .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(20, 10, 40, 0.38), rgba(20, 10, 60, 0.38));
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero .container, .hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -430,12 +440,32 @@ body::before {
     font-weight: 600;
     margin-top: 30px;
     transition: var(--transition);
+    animation: pulse-btn 2.1s cubic-bezier(.4,1.6,.4,1) infinite;
 }
 
 .telegram-button:hover {
     transform: translateY(-2px);
     background: var(--secondary-color);
     box-shadow: 0 6px 12px rgba(75, 46, 255, 0.3);
+}
+
+.telegram-button i {
+    font-size: 1.45em;
+}
+
+@keyframes pulse-btn {
+    0% {
+        box-shadow: 0 0 0 0 rgba(108,99,255,0.18), 0 0 0 0 rgba(75,46,255,0.12);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 18px 6px rgba(108,99,255,0.28), 0 0 32px 12px rgba(75,46,255,0.18);
+        transform: scale(1.035);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(108,99,255,0.18), 0 0 0 0 rgba(75,46,255,0.12);
+        transform: scale(1);
+    }
 }
 
 /* Footer */
@@ -849,6 +879,24 @@ iframe[title="ticker tape TradingView widget"] {
     margin-bottom: 32px;
     letter-spacing: 1px;
 }
+.ai-title-h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 16px rgba(162,89, 255, 0.25), 0 1px 0 #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+    background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff, #a259ff, #4b2 eff);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    will-change: background-position, opacity, transform;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: hero-fade-in-up 1.2s cubic-bezier(.4, 1.6, .4, 1) forwards, gradient-move 4s ease-in-out infinite alternate;
+    animation-delay: 0.1s, 0s;
+    color: unset;
+}
 .ai-top {
     display: flex;
     flex-direction: row;
@@ -887,7 +935,24 @@ iframe[title="ticker tape TradingView widget"] {
     box-shadow: none;
     display: block;
     margin-bottom: 0;
+    animation: pulse-img 2.2s cubic-bezier(.4,1.6,.4,1) infinite;
 }
+
+@keyframes pulse-img {
+    0% {
+        box-shadow: 0 0 0 0 rgba(75,46,255,0.25), 0 0 0 0 rgba(162,89,255,0.18);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 32px 8px rgba(75,46,255,0.35), 0 0 64px 16px rgba(162,89,255,0.22);
+        transform: scale(1.035);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(75,46,255,0.25), 0 0 0 0 rgba(162,89,255,0.18);
+        transform: scale(1);
+    }
+}
+
 .ai-icon {
     margin-bottom: 8px;
 }
@@ -1071,4 +1136,156 @@ iframe[title="ticker tape TradingView widget"] {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: unset;
+}
+
+.final-cta-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    text-shadow: 0 2px 16px rgba(75,46,255,0.18), 0 1px 0 #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 38px;
+    background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff, #a259ff, #4b2eff);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    will-change: background-position, opacity, transform;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: hero-fade-in-up 1.2s cubic-bezier(.4,1.6,.4,1) forwards, gradient-move 4s ease-in-out infinite alternate;
+    animation-delay: 0.2s, 0s;
+    color: unset;
+    text-align: center;
+}
+
+.navbar-minimal {
+    position: static;
+    top: unset;
+    left: unset;
+    width: 100vw;
+    z-index: 100;
+    background: rgba(20, 10, 40, 0.96);
+    box-shadow: 0 2px 16px 0 #4b2eff44;
+    padding: 0 0 0 0;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    margin-top: 0;
+}
+.navbar-minimal ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-minimal li {
+    display: inline-block;
+}
+.navbar-minimal a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.13rem;
+    text-shadow: 0 2px 8px #4b2eff44;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background 0.18s, color 0.18s, text-shadow 0.18s;
+    letter-spacing: 0.2px;
+}
+.navbar-minimal a:hover, .navbar-minimal a:focus {
+    background: #4b2eff66;
+    color: #fff;
+    text-shadow: 0 2px 16px #a259ff88;
+}
+@media (max-width: 700px) {
+    .navbar-minimal ul {
+        gap: 14px;
+    }
+    .navbar-minimal a {
+        font-size: 0.98rem;
+        padding: 7px 6px;
+    }
+}
+
+.navbar-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35em;
+    margin-left: 6px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    transition: box-shadow 0.18s, background 0.18s, color 0.18s;
+    animation: pulse-social 2.2s cubic-bezier(.4,1.6,.4,1) infinite;
+}
+.navbar-instagram {
+    color: #e1306c;
+    background: rgba(225,48,108,0.08);
+}
+.navbar-telegram {
+    color: #229ed9;
+    background: rgba(34,158,217,0.08);
+}
+.navbar-social:hover, .navbar-social:focus {
+    box-shadow: 0 0 12px 2px #a259ff88, 0 0 0 2px #fff2;
+    background: #fff1;
+    color: #fff;
+}
+@keyframes pulse-social {
+    0% {
+        box-shadow: 0 0 0 0 rgba(162,89,255,0.12);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 12px 4px #a259ff44;
+        transform: scale(1.08);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(162,89,255,0.12);
+        transform: scale(1);
+    }
+}
+
+.scroll-to-top {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4b2eff 60%, #a259ff 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 16px #4b2eff44;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    cursor: pointer;
+    z-index: 9999;
+    transition: box-shadow 0.18s, background 0.18s, color 0.18s;
+    animation: pulse-scrolltop 2.2s cubic-bezier(.4,1.6,.4,1) infinite;
+}
+.scroll-to-top:hover, .scroll-to-top:focus {
+    box-shadow: 0 0 18px 4px #a259ff88, 0 0 0 2px #fff2;
+    background: linear-gradient(135deg, #a259ff 60%, #4b2eff 100%);
+    color: #fff;
+}
+@keyframes pulse-scrolltop {
+    0% {
+        box-shadow: 0 0 0 0 #a259ff33;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 18px 8px #a259ff55;
+        transform: scale(1.08);
+    }
+    100% {
+        box-shadow: 0 0 0 0 #a259ff33;
+        transform: scale(1);
+    }
 } 
