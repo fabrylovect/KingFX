@@ -523,6 +523,10 @@ footer {
 }
 
 @media (max-width: 700px) {
+    .hero {
+        background: url('sfondomobile.jpg') top center repeat-x;
+        background-size: auto;
+    }
     .hero-title {
         font-size: 1.5rem;
     }
