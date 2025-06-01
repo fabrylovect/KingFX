@@ -172,8 +172,9 @@ body::before {
 
 /* Buttons */
 .cta-button {
-    background: var(--accent-color);
-    color: var(--light-text);
+    background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff, #a259ff, #4b2eff);
+    background-size: 400% 100%;
+    color: #fff;
     border: none;
     padding: 15px 30px;
     border-radius: 30px;
@@ -184,32 +185,25 @@ body::before {
     box-shadow: 0 0 24px 0 #a259ff44;
     text-decoration: none !important;
     outline: none;
+    will-change: background-position, opacity, transform;
+    animation: cta-fade-in-up 1.1s cubic-bezier(.4,1.6,.4,1) forwards, gradient-move 4s ease-in-out infinite alternate;
+    opacity: 0;
+    transform: translateY(30px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .cta-button:hover, .cta-button:focus {
-    background: var(--secondary-color);
+    background-position: 100% 50%;
     box-shadow: 0 0 32px 8px #a259ff88;
     color: #fff;
     text-shadow: 0 0 8px #a259ff88, 0 1px 0 #fff;
+    -webkit-text-fill-color: #fff;
 }
-@media (max-width: 700px) {
-    .cta-button {
-        background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff, #a259ff, #4b2eff);
-        background-size: 400% 100%;
-        color: #fff;
-        will-change: background-position, opacity, transform;
-        animation: cta-fade-in-up 1.1s cubic-bezier(.4,1.6,.4,1) forwards, gradient-move 4s ease-in-out infinite alternate;
-        opacity: 0;
-        transform: translateY(30px);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-    .cta-button:hover, .cta-button:focus {
-        background-position: 100% 50%;
-        box-shadow: 0 0 32px 8px #a259ff88;
-        color: #fff;
-        text-shadow: 0 0 8px #a259ff88, 0 1px 0 #fff;
-        -webkit-text-fill-color: #fff;
+@keyframes cta-fade-in-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
