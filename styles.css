@@ -523,11 +523,23 @@ footer {
 }
 
 @media (max-width: 700px) {
+    .navbar-minimal {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .navbar-minimal ul {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .navbar-social {
+        margin-bottom: 0 !important;
+    }
     .hero {
         background: url('sfondomobile.jpg') top center no-repeat;
         background-size: cover;
         min-height: 100vh;
-        padding: 0 0 32px 0;
+        padding-top: 0 !important;
+        padding-bottom: 32px;
     }
     .hero .container,
     .hero-content {
