@@ -574,6 +574,9 @@ footer {
         max-width: 95vw;
         padding: 0 10px;
     }
+    .final-cta-title br {
+        display: block;
+    }
 }
 
 /* Animations */
@@ -1348,4 +1351,10 @@ iframe[title="ticker tape TradingView widget"] {
         box-shadow: 0 0 0 0 #a259ff33;
         transform: scale(1);
     }
+}
+
+.ai-section .telegram-button i {
+    color: #229ed9 !important;
+    filter: drop-shadow(0 0 6px #229ed988);
+    background: none;
 } 
