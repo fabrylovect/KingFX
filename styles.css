@@ -171,24 +171,46 @@ body::before {
 }
 
 /* Buttons */
-@media (min-width: 701px) {
-  .cta-button {
-    background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff, #a259ff, #4b2eff);
-    background-size: 400% 100%;
-    color: #fff;
-    -webkit-background-clip: border-box;
-    -webkit-text-fill-color: #fff;
-    background-clip: border-box;
+.cta-button {
+    background: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition);
     box-shadow: 0 0 24px 0 #a259ff44;
-    text-shadow: 0 0 8px #a259ff44, 0 1px 0 #fff;
-  }
-  .cta-button:hover, .cta-button:focus {
-    background-position: 100% 50%;
+    text-decoration: none !important;
+    outline: none;
+}
+.cta-button:hover, .cta-button:focus {
+    background: var(--secondary-color);
     box-shadow: 0 0 32px 8px #a259ff88;
     color: #fff;
     text-shadow: 0 0 8px #a259ff88, 0 1px 0 #fff;
-    -webkit-text-fill-color: #fff;
-  }
+}
+@media (max-width: 700px) {
+    .cta-button {
+        background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff, #a259ff, #4b2eff);
+        background-size: 400% 100%;
+        color: #fff;
+        will-change: background-position, opacity, transform;
+        animation: cta-fade-in-up 1.1s cubic-bezier(.4,1.6,.4,1) forwards, gradient-move 4s ease-in-out infinite alternate;
+        opacity: 0;
+        transform: translateY(30px);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .cta-button:hover, .cta-button:focus {
+        background-position: 100% 50%;
+        box-shadow: 0 0 32px 8px #a259ff88;
+        color: #fff;
+        text-shadow: 0 0 8px #a259ff88, 0 1px 0 #fff;
+        -webkit-text-fill-color: #fff;
+    }
 }
 
 /* How it Works Section */
