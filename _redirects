@@ -1,0 +1,13 @@
+# Redirects per Netlify
+# Formato: from    to    status
+
+# Redirect principale
+/landing      /landing/index.html    200
+/landing/     /landing/index.html    200
+/home         /home/index.html    200
+/home/        /home/index.html    200
+/             /home/index.html    200
+
+# Redirect alternativi (se il primo non funziona)
+/landing.html /landing/index.html    200
+/home.html    /home/index.html    200
