@@ -21,25 +21,48 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: var(--background);
-    background-image: url('sfondo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: #000000;
     position: relative;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 30%, rgba(75, 46, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(162, 89, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.1) 0%, transparent 50%);
+    filter: blur(80px);
+    z-index: -1;
+    animation: background-pulse 8s ease-in-out infinite alternate;
+}
+
+body::after {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(45, 27, 105, 0.9), rgba(0, 0, 0, 0.95));
-    z-index: -1;
+    background: #000000;
+    z-index: -2;
+}
+
+@keyframes background-pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 .container {
@@ -56,9 +79,9 @@ body::before {
     justify-content: center;
     min-height: 60vh;
     padding: 60px 0 40px 0;
-    background: url('sfondolanding.png') top center repeat-x;
-    background-size: auto;
+    background: #000000;
     position: relative;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -68,9 +91,12 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, rgba(20, 10, 40, 0.38), rgba(20, 10, 60, 0.38));
+    background: radial-gradient(circle at 30% 40%, rgba(75, 46, 255, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(162, 89, 255, 0.2) 0%, transparent 60%);
+    filter: blur(60px);
     z-index: 0;
     pointer-events: none;
+    opacity: 0.6;
 }
 
 .hero .container, .hero-content {
@@ -84,6 +110,71 @@ body::before {
     align-items: center;
     text-align: center;
     width: 100%;
+}
+
+.hero-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.king-ea-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(108, 99, 255, 0.4));
+    transition: var(--transition);
+    animation: float-image 3s ease-in-out infinite;
+    border: none;
+    box-shadow: none;
+}
+
+.king-ea-image:hover {
+    filter: drop-shadow(0 0 30px rgba(162, 89, 255, 0.6));
+    transform: translateY(-5px);
+}
+
+@keyframes float-image {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-main {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .king-ea-image {
+        max-width: 350px;
+    }
 }
 
 .logo {
@@ -158,9 +249,9 @@ body::before {
     width: 100%;
     max-width: 500px;
     height: auto;
-    border: 2px solid var(--accent-color);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.2);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     transition: var(--transition);
 }
 
@@ -251,7 +342,29 @@ body::before {
 /* Benefits Section */
 .benefits {
     padding: 100px 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefits::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(75, 46, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(162, 89, 255, 0.15) 0%, transparent 50%);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.benefits .container {
+    position: relative;
+    z-index: 1;
 }
 
 .benefits-grid {
@@ -361,8 +474,30 @@ body::before {
 /* Auto Trading Section */
 .auto-trading {
     padding: 100px 0;
-    background: rgba(45, 27, 105, 0.9);
+    background: #000000;
     color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.auto-trading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 40% 60%, rgba(75, 46, 255, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 60% 40%, rgba(162, 89, 255, 0.18) 0%, transparent 55%);
+    filter: blur(75px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.auto-trading .container {
+    position: relative;
+    z-index: 1;
 }
 
 .auto-trading-content {
@@ -406,10 +541,222 @@ body::before {
     transition: var(--transition);
 }
 
+/* Results Section */
+.results-section {
+    padding: 100px 0;
+    background: #000000;
+    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.results-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 25% 75%, rgba(75, 46, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(162, 89, 255, 0.12) 0%, transparent 50%);
+    filter: blur(90px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.results-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.results-carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.results-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.results-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.result-card {
+    min-width: 100%;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(108, 99, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.result-card.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.result-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.3);
+}
+
+.result-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    max-height: 600px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.result-card:hover .result-image {
+    transform: scale(1.02);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(75, 46, 255, 0.8);
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    font-size: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(75, 46, 255, 0.4);
+}
+
+.carousel-btn:hover {
+    background: rgba(108, 99, 255, 0.9);
+    box-shadow: 0 6px 24px rgba(162, 89, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn-prev {
+    left: 0;
+}
+
+.carousel-btn-next {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(108, 99, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    background: rgba(108, 99, 255, 0.6);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--accent-color);
+    box-shadow: 0 0 12px rgba(108, 99, 255, 0.6);
+    transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+    .results-carousel-container {
+        padding: 0 50px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .result-image {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-carousel-container {
+        padding: 0 40px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .result-image {
+        max-height: 300px;
+    }
+}
+
 /* FAQ Section */
 .faq {
     padding: 100px 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(162, 89, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(75, 46, 255, 0.15) 0%, transparent 50%);
+    filter: blur(85px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.faq .container {
+    position: relative;
+    z-index: 1;
 }
 
 .faq-grid {
@@ -441,8 +788,31 @@ body::before {
 .final-cta {
     padding: 100px 0;
     text-align: center;
-    background: rgba(45, 27, 105, 0.9);
+    background: #000000;
     color: var(--light-text);
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(75, 46, 255, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 30% 70%, rgba(162, 89, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(108, 99, 255, 0.15) 0%, transparent 50%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.final-cta .container {
+    position: relative;
+    z-index: 1;
 }
 
 .telegram-button {
@@ -495,6 +865,16 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero-main {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20px;
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
     .hero .container {
         flex-direction: column;
         text-align: center;
@@ -552,7 +932,7 @@ footer {
         margin-bottom: 0 !important;
     }
     .hero {
-        background: url('sfondomobile.jpg') top center no-repeat;
+        background: #000000;
         background-size: cover;
         min-height: 100vh;
         padding-top: 0 !important;
@@ -914,9 +1294,35 @@ iframe[title="ticker tape TradingView widget"] {
 }
 
 .ai-section {
-    background: #2d1867;
+    background: #000000;
     padding: 70px 0 40px 0;
     color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 25% 75%, rgba(75, 46, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(162, 89, 255, 0.12) 0%, transparent 50%);
+    filter: blur(90px);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.ai-section .container,
+.ai-section .ai-title,
+.ai-section .ai-top,
+.ai-section .ai-features {
+    position: relative;
+    z-index: 1;
 }
 .ai-title h2 {
     text-align: center;
@@ -963,23 +1369,16 @@ iframe[title="ticker tape TradingView widget"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(130, 170, 255, 0.18);
-    border-radius: 24px;
-    box-shadow: 0 4px 32px 0 #8ecaff33, 0 1.5px 0 #fff1;
-    backdrop-filter: blur(8px);
-    border: 2.5px solid #8ecaff44;
-    transition: box-shadow 0.25s, transform 0.25s;
+    background: transparent;
+    transition: transform 0.25s;
 }
 .ai-icon-box:hover {
-    box-shadow: 0 8px 40px 0 #8ecaff66, 0 2px 0 #fff2;
     transform: translateY(-6px) scale(1.03);
 }
 .ai-img-box {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
-    box-shadow: none;
+    object-fit: contain;
     display: block;
     margin-bottom: 0;
     animation: pulse-img 2.2s cubic-bezier(.4,1.6,.4,1) infinite;
