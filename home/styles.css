@@ -527,36 +527,47 @@ body::after {
 
 .service-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     padding: 25px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     border: 1px solid rgba(108, 99, 255, 0.2);
     transition: var(--transition);
+    text-align: center;
+    flex-direction: column;
 }
 
 .service-item:hover {
     border-color: var(--accent-color);
     background: rgba(108, 99, 255, 0.1);
-    transform: translateX(10px);
+    transform: translateY(-5px);
 }
 
 .service-item i {
     font-size: 2rem;
     color: var(--accent-color);
-    margin-top: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .service-item h4 {
     color: #fff;
     margin-bottom: 8px;
     font-size: 1.3rem;
+    text-align: center;
 }
 
 .service-item p {
     color: #bdbdff;
     font-size: 1rem;
+    text-align: center;
+}
+
+.service-item > div {
+    text-align: center;
+    width: 100%;
 }
 
 /* Objectives Grid */
