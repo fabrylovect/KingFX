@@ -337,7 +337,7 @@
             </p>
             <div class="contact-container">
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/home/?submitted=true#contatti">
+                    <form class="contact-form" id="contactForm" name="contact" method="POST" netlify netlify-honeypot="bot-field">
                         <input type="hidden" name="form-name" value="contact">
                         <p style="display: none;">
                             <label>Non compilare questo campo se sei umano: <input name="bot-field" /></label>
@@ -471,26 +471,54 @@
     </button>
 
     <script>
-        // Form handling
+        // Form handling con Netlify Forms
         const contactForm = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
 
-        // Netlify gestisce automaticamente l'invio del form
-        // Non serve preventDefault() - lasciamo che Netlify gestisca il submit
-        
-        // Gestione del successo dopo il submit (Netlify reindirizza)
-        if (window.location.search.includes('submitted=true')) {
-            formMessage.textContent = 'Grazie per il tuo messaggio! Ti contatteremo presto.';
-            formMessage.className = 'form-message success';
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Mostra messaggio di caricamento
+            formMessage.textContent = 'Invio in corso...';
+            formMessage.className = 'form-message';
             formMessage.style.display = 'block';
             
-            // Reset messaggio dopo 5 secondi
-            setTimeout(() => {
-                formMessage.textContent = '';
-                formMessage.className = 'form-message';
-                formMessage.style.display = 'none';
-            }, 5000);
-        }
+            // Prepara i dati del form
+            const formData = new FormData(contactForm);
+            
+            try {
+                // Invia il form a Netlify Forms
+                // Per Netlify Forms, l'endpoint è sempre "/" perché Netlify gestisce automaticamente il routing
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                });
+                
+                if (response.ok) {
+                    // Successo
+                    formMessage.textContent = 'Grazie per il tuo messaggio! Ti contatteremo presto.';
+                    formMessage.className = 'form-message success';
+                    contactForm.reset();
+                    
+                    // Scroll alla sezione contatti per mostrare il messaggio
+                    document.getElementById('contatti').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reset messaggio dopo 5 secondi
+                    setTimeout(() => {
+                        formMessage.textContent = '';
+                        formMessage.className = 'form-message';
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Errore nell\'invio');
+                }
+            } catch (error) {
+                // Errore
+                formMessage.textContent = 'Si è verificato un errore. Riprova più tardi o contattaci direttamente.';
+                formMessage.className = 'form-message error';
+            }
+        });
 
         // Scroll to top button
         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
