@@ -1513,25 +1513,55 @@ iframe[title="ticker tape TradingView widget"] {
     }
 }
 
-.ai-chart-card {
+.ai-widget-card {
     width: 100%;
-    min-height: 260px;
-    padding: 32px 32px 18px 32px;
+    padding: 32px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
 }
-.ai-chart {
-    width: 100% !important;
-    max-width: 100% !important;
+
+.myfxbook-button-landing {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #4b2eff 60%, #a259ff 100%);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.myfxbook-button-landing:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(162, 89, 255, 0.4);
+}
+
+.myfxbook-widget-link-landing {
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.myfxbook-widget-link-landing:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.myfxbook-widget-image-landing {
+    max-width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
+
 @media (max-width: 900px) {
-    .ai-chart-card {
-        padding: 12px 2vw 8px 2vw;
-        min-height: 180px;
+    .ai-widget-card {
+        padding: 20px;
     }
 }
 
