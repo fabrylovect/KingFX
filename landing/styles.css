@@ -628,7 +628,17 @@ body::after {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.result-card:hover .result-image {
+.result-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    max-height: 600px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.result-card:hover .result-image,
+.result-card:hover .result-video {
     transform: scale(1.02);
 }
 
@@ -710,7 +720,8 @@ body::after {
         font-size: 1.2rem;
     }
     
-    .result-image {
+    .result-image,
+    .result-video {
         max-height: 400px;
     }
 }
@@ -726,7 +737,8 @@ body::after {
         font-size: 1rem;
     }
     
-    .result-image {
+    .result-image,
+    .result-video {
         max-height: 300px;
     }
 }

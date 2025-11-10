@@ -663,6 +663,13 @@ body::after {
     backdrop-filter: blur(10px);
 }
 
+.service-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
 .service-card::before {
     content: '';
     position: absolute;

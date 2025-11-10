@@ -213,44 +213,88 @@
                 </button>
                 <div class="results-carousel">
                     <div class="results-track" id="resultsTrack">
+                        <!-- Immagini esistenti -->
                         <div class="result-card active">
-                            <img src="Risultati/profitti22.05.png" alt="Risultati Profitti" class="result-image">
-                        </div>
-                        <div class="result-card">
-                            <img src="Risultati/conto madre.jpg" alt="Conto Madre" class="result-image">
-                        </div>
-                        <div class="result-card">
-                            <img src="Risultati/conto anonimo.jpg" alt="Conto Anonimo" class="result-image">
-                        </div>
-                        <div class="result-card">
                             <img src="Risultati/jacopo feed.png" alt="Jacopo Feed" class="result-image">
                         </div>
+                        <!-- Nuove immagini -->
                         <div class="result-card">
-                            <img src="Risultati/Jacopo.jpg" alt="Jacopo" class="result-image">
+                            <img src="Risultati/photo_2025-08-06_10-25-56.jpg" alt="Risultati Trading" class="result-image">
                         </div>
                         <div class="result-card">
-                            <img src="Risultati/roby1.jpg" alt="Roby 1" class="result-image">
+                            <img src="Risultati/photo_2025-08-06_10-25-58.jpg" alt="Risultati Trading" class="result-image">
                         </div>
                         <div class="result-card">
-                            <img src="Risultati/roby2jpg.jpg" alt="Roby 2" class="result-image">
+                            <img src="Risultati/photo_2025-08-06_10-25-58 (2).jpg" alt="Risultati Trading" class="result-image">
                         </div>
                         <div class="result-card">
-                            <img src="Risultati/roby3.jpg" alt="Roby 3" class="result-image">
+                            <img src="Risultati/photo_2025-08-06_10-25-59.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-10-10_19-05-35.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-10-10_19-09-07.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-30.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-30 (2).jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-31.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-49.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Screenshot_20251102_164018_MetaTrader 5.jpg" alt="Screenshot MetaTrader 5" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Screenshot_20251102_164243_MetaTrader 5.jpg" alt="Screenshot MetaTrader 5" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Screenshot_20251102_164315_MetaTrader 5.jpg" alt="Screenshot MetaTrader 5" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Senza titolo.png" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Senza titolo2.png" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <!-- Video -->
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-33.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-43.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-48.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-53.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
                         </div>
                     </div>
                 </div>
                 <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Immagine successiva">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="carousel-dots">
-                    <span class="dot active" data-slide="0"></span>
-                    <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
-                    <span class="dot" data-slide="3"></span>
-                    <span class="dot" data-slide="4"></span>
-                    <span class="dot" data-slide="5"></span>
-                    <span class="dot" data-slide="6"></span>
-                    <span class="dot" data-slide="7"></span>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- I dots verranno generati dinamicamente dal JavaScript -->
                 </div>
             </div>
             <div style="text-align:center; margin-top:32px;">
@@ -327,11 +371,23 @@
     // Carosello Risultati
     let currentSlide = 0;
     const slides = document.querySelectorAll('.result-card');
-    const dots = document.querySelectorAll('.dot');
     const track = document.getElementById('resultsTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const carouselDots = document.getElementById('carouselDots');
     const totalSlides = slides.length;
+
+    // Genera i dots dinamicamente
+    function generateDots() {
+        carouselDots.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-slide', i);
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        }
+    }
 
     function updateCarousel() {
         // Rimuovi active da tutte le card e dots
@@ -342,6 +398,7 @@
             }
         });
         
+        const dots = document.querySelectorAll('.dot');
         dots.forEach((dot, index) => {
             dot.classList.remove('active');
             if (index === currentSlide) {
@@ -372,11 +429,6 @@
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Dots navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goToSlide(index));
-    });
-
     // Auto-scroll (opzionale)
     let autoScrollInterval = setInterval(nextSlide, 5000);
 
@@ -391,6 +443,7 @@
     });
 
     // Inizializza
+    generateDots();
     updateCarousel();
 
     // INSERISCI QUI LA TUA API KEY DI TWELVE DATA
