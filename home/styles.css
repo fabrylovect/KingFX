@@ -1307,18 +1307,21 @@ iframe[title="ticker tape TradingView widget"] {
         padding: 20px;
     }
     
+    /* Team profiles affiancati su mobile */
     .team-profiles {
-        gap: 30px;
-        flex-direction: column;
+        gap: 20px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
     }
     
     .profile-image-wrapper {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .profile-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .mission-text {
@@ -1331,6 +1334,84 @@ iframe[title="ticker tape TradingView widget"] {
     
     .myfxbook-embed iframe {
         min-height: 400px;
+    }
+    
+    /* Layout alternato per le sezioni su mobile */
+    /* Sezioni dispari: allineate a sinistra */
+    #chi-siamo .content-card,
+    #servizi .content-card,
+    #contatti .content-card {
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 90%;
+        border-left: 3px solid var(--accent-color);
+        border-right: none;
+    }
+    
+    #chi-siamo .content-text,
+    #servizi .content-text,
+    #contatti .content-text {
+        text-align: left;
+    }
+    
+    #chi-siamo .section-title,
+    #servizi .section-title,
+    #contatti .section-title {
+        text-align: left;
+    }
+    
+    /* Sezioni pari: allineate a destra */
+    #visione .content-card,
+    #risultati .content-card {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: 90%;
+        border-left: none;
+        border-right: 3px solid var(--accent-color);
+    }
+    
+    #visione .content-text,
+    #risultati .content-text {
+        text-align: right;
+    }
+    
+    #visione .section-title,
+    #risultati .section-title {
+        text-align: right;
+    }
+    
+    /* Features grid alternato */
+    #chi-siamo .features-grid .feature-item,
+    #servizi .features-grid .feature-item {
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 95%;
+    }
+    
+    #visione .features-grid .feature-item,
+    #risultati .features-grid .feature-item {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: 95%;
+    }
+    
+    /* Service items alternati */
+    #visione .service-item {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    
+    /* Objectives grid alternato */
+    #visione .objectives-grid .objective-card {
+        margin-left: auto;
+        margin-right: 0;
+        max-width: 95%;
+    }
+    
+    #chi-siamo .objectives-grid .objective-card {
+        margin-left: 0;
+        margin-right: auto;
+        max-width: 95%;
     }
 }
 
