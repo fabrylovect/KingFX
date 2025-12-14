@@ -9,6 +9,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
+      {
+        "symbols": [
+          { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" },
+          { "proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD" },
+          { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+          { "description": "GOLD", "proName": "OANDA:XAUUSD" },
+          { "description": "GBP/USD", "proName": "OANDA:GBPUSD" },
+          { "description": "EUR/USD", "proName": "OANDA:EURUSD" },
+          { "description": "USD/JPY", "proName": "OANDA:USDJPY" },
+          { "description": "EUR/GBP", "proName": "OANDA:EURGBP" },
+          { "description": "EUR/JPY", "proName": "OANDA:EURJPY" },
+          { "description": "AUD/USD", "proName": "OANDA:AUDUSD" }
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": false,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "it"
+      }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+
     <!-- Navbar -->
     <nav class="navbar-minimal">
         <ul>
@@ -337,6 +364,18 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Popup Modale Successo -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="modal-title">Grazie per la tua candidatura!</h2>
+            <p class="modal-message">Ti contatteremo presto.</p>
+            <button class="modal-button" id="modalOkButton">OK</button>
+        </div>
+    </div>
+
     <script>
         // Form handling con Netlify Forms
         const applicationForm = document.getElementById('applicationForm');
@@ -362,20 +401,17 @@
                 });
                 
                 if (response.ok) {
-                    // Successo
-                    formMessage.textContent = 'Grazie per la tua candidatura! Ti contatteremo presto.';
-                    formMessage.className = 'form-message success';
+                    // Successo - mostra popup
                     applicationForm.reset();
+                    // Reset campi condizionali
+                    altroSituazioneGroup.style.display = 'none';
+                    altroSituazioneInput.removeAttribute('required');
+                    descrizioneEsperienzeGroup.style.display = 'none';
+                    descrizioneEsperienzeInput.removeAttribute('required');
                     
-                    // Scroll alla sezione form per mostrare il messaggio
-                    document.getElementById('candidatura').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Reset messaggio dopo 5 secondi
-                    setTimeout(() => {
-                        formMessage.textContent = '';
-                        formMessage.className = 'form-message';
-                        formMessage.style.display = 'none';
-                    }, 5000);
+                    // Mostra popup
+                    const successModal = document.getElementById('successModal');
+                    successModal.style.display = 'flex';
                 } else {
                     throw new Error('Errore nell\'invio');
                 }
@@ -431,6 +467,28 @@
         });
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Gestione popup modale
+        const successModal = document.getElementById('successModal');
+        const modalOkButton = document.getElementById('modalOkButton');
+
+        modalOkButton.addEventListener('click', () => {
+            successModal.style.display = 'none';
+        });
+
+        // Chiudi popup cliccando fuori dal contenuto
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+
+        // Chiudi popup con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && successModal.style.display === 'flex') {
+                successModal.style.display = 'none';
+            }
         });
     </script>
 </body>
