@@ -45,6 +45,18 @@
   status = 200
   force = false
 
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+  force = false
+
 # Headers per sicurezza e performance
 [[headers]]
   for = "/*"
