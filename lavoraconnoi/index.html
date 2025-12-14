@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavora con Noi - King FX Financed</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar-minimal">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home#chi-siamo">Chi Siamo</a></li>
+            <li><a href="/home#servizi">Servizi</a></li>
+            <li><a href="/home#risultati">Risultati</a></li>
+            <li><a href="/home#contatti">Contatti</a></li>
+            <li>
+                <a href="https://www.instagram.com/peppe_fx/" target="_blank" class="navbar-social navbar-instagram" title="Instagram KingFX">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://t.me/+9g76ARt6yW9lMTI0" target="_blank" class="navbar-social navbar-telegram" title="Telegram KingFX">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <a href="/home" class="logo-link">
+                    <img src="KING FX FINANCED_trasp.png" alt="King FX Financed Logo" class="logo">
+                </a>
+                <div class="hero-main">
+                    <div class="hero-text">
+                        <h1 class="hero-title">Lavora con Noi</h1>
+                        <p class="subtitle">Cerchiamo persone appassionate, competenti e motivate a crescere insieme a noi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Candidatura -->
+    <section class="section form-section" id="candidatura">
+        <div class="container">
+            <h2 class="section-title">Invia la Tua Candidatura</h2>
+            <p class="section-subtitle">
+                Compila il form qui sotto per candidarti. Valuteremo la tua richiesta e ti contatteremo il prima possibile.
+            </p>
+            <div class="form-container">
+                <form class="application-form" id="applicationForm" name="lavora-con-noi" method="POST" netlify netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="lavora-con-noi">
+                    <p style="display: none;">
+                        <label>Non compilare questo campo se sei umano: <input name="bot-field" /></label>
+                    </p>
+                    
+                    <div class="form-group">
+                        <label for="nome-cognome">
+                            <i class="fas fa-user"></i>
+                            Nome e Cognome *</label>
+                        <input 
+                            type="text" 
+                            id="nome-cognome" 
+                            name="nome-cognome" 
+                            required 
+                            placeholder="Il tuo nome e cognome"
+                        >
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                placeholder="tua.email@esempio.com"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">
+                                <i class="fas fa-phone"></i>
+                                Telefono *</label>
+                            <input 
+                                type="tel" 
+                                id="telefono" 
+                                name="telefono" 
+                                required 
+                                placeholder="+39 123 456 7890"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telegram">
+                                <i class="fab fa-telegram"></i>
+                                Username Telegram *</label>
+                            <input 
+                                type="text" 
+                                id="telegram" 
+                                name="telegram" 
+                                required 
+                                placeholder="@tuousername"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="paese">
+                                <i class="fas fa-globe"></i>
+                                Paese di residenza *</label>
+                            <input 
+                                type="text" 
+                                id="paese" 
+                                name="paese" 
+                                required 
+                                placeholder="Italia"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eta">
+                            <i class="fas fa-birthday-cake"></i>
+                            Età *</label>
+                        <input 
+                            type="number" 
+                            id="eta" 
+                            name="eta" 
+                            required 
+                            min="18" 
+                            max="100"
+                            placeholder="25"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="situazione">
+                            <i class="fas fa-briefcase"></i>
+                            Situazione attuale *</label>
+                        <select id="situazione" name="situazione" required>
+                            <option value="">Seleziona una opzione</option>
+                            <option value="studente">Studente</option>
+                            <option value="lavoratore-dipendente">Lavoratore dipendente</option>
+                            <option value="libero-professionista">Libero professionista</option>
+                            <option value="altro">Altro (specifica)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="altro-situazione-group" style="display: none;">
+                        <label for="altro-situazione">
+                            <i class="fas fa-edit"></i>
+                            Specifica la tua situazione *</label>
+                        <input 
+                            type="text" 
+                            id="altro-situazione" 
+                            name="altro-situazione" 
+                            placeholder="Descrivi la tua situazione attuale"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tempo-dedicato">
+                            <i class="fas fa-clock"></i>
+                            Quanto tempo puoi dedicare a settimana? *</label>
+                        <select id="tempo-dedicato" name="tempo-dedicato" required>
+                            <option value="">Seleziona una opzione</option>
+                            <option value="meno-5-ore">Meno di 5 ore</option>
+                            <option value="5-10-ore">5–10 ore</option>
+                            <option value="10-20-ore">10–20 ore</option>
+                            <option value="full-time">Full time</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="perche-collaborare">
+                            <i class="fas fa-question-circle"></i>
+                            Perché vuoi collaborare con King FX? *</label>
+                        <textarea 
+                            id="perche-collaborare" 
+                            name="perche-collaborare" 
+                            rows="4" 
+                            required 
+                            placeholder="Spiega perché vuoi collaborare con noi..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aspettative">
+                            <i class="fas fa-lightbulb"></i>
+                            Cosa ti aspetti realisticamente da questa collaborazione? *</label>
+                        <textarea 
+                            id="aspettative" 
+                            name="aspettative" 
+                            rows="4" 
+                            required 
+                            placeholder="Descrivi le tue aspettative..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="obiettivo">
+                            <i class="fas fa-bullseye"></i>
+                            Qual è il tuo obiettivo personale nei prossimi 6–12 mesi? *<br>
+                            <span style="font-size: 0.9rem; color: #bdbdff; font-weight: 400;">(Mentalità > competenze)</span>
+                        </label>
+                        <textarea 
+                            id="obiettivo" 
+                            name="obiettivo" 
+                            rows="4" 
+                            required 
+                            placeholder="Descrivi il tuo obiettivo personale..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-check-circle"></i>
+                            Hai già avuto esperienze in progetti online o finanziari? *
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="esperienze" value="si" required>
+                                <span>Sì</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="esperienze" value="no" required>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="descrizione-esperienze-group" style="display: none;">
+                        <label for="descrizione-esperienze">
+                            <i class="fas fa-file-alt"></i>
+                            Se sì, descrivila brevemente (max 3–4 righe) *</label>
+                        <textarea 
+                            id="descrizione-esperienze" 
+                            name="descrizione-esperienze" 
+                            rows="4" 
+                            placeholder="Descrivi brevemente le tue esperienze..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-tasks"></i>
+                            Sei disposto a seguire linee guida e procedure precise? *
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="linee-guida" value="si" required>
+                                <span>Sì</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="linee-guida" value="no" required>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reazione-ritardi">
+                            <i class="fas fa-hourglass-half"></i>
+                            Come reagisci quando un risultato tarda ad arrivare? *</label>
+                        <textarea 
+                            id="reazione-ritardi" 
+                            name="reazione-ritardi" 
+                            rows="4" 
+                            required 
+                            placeholder="Descrivi come reagisci in queste situazioni..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="altro-info">
+                            <i class="fas fa-info-circle"></i>
+                            C'è qualcosa che dovremmo sapere su di te? (facoltativa)</label>
+                        <textarea 
+                            id="altro-info" 
+                            name="altro-info" 
+                            rows="3" 
+                            placeholder="Informazioni aggiuntive che vuoi condividere..."
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="privacy" 
+                                name="privacy" 
+                                required
+                            >
+                            <span>Accetto l'<a href="https://kingfx.eu/policies/privacy-policy" target="_blank">informativa sulla privacy</a> e autorizzo il trattamento dei dati personali *</span>
+                        </label>
+                    </div>
+
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Invia Candidatura
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 32px 0 0 0;">
+            <div style="text-align:center; color:#fff; font-size:1.05rem; margin-bottom: 8px;">
+                © 2025, <a href="https://kingfx.eu/" style="color:#fff; text-decoration:underline;">King FX</a> info@kingfx.eu
+            </div>
+            <div style="text-align:center; color:#fff; font-size:0.98rem; line-height:1.7; max-width: 98vw;">
+                <a href="https://kingfx.eu/policies/privacy-policy" style="color:#fff; text-decoration:underline;">Informativa sulla privacy</a> &middot;
+                <a href="https://kingfx.eu/policies/refund-policy" style="color:#fff; text-decoration:underline;">Informativa sui rimborsi</a> &middot;
+                <a href="https://kingfx.eu/policies/terms-of-service" style="color:#fff; text-decoration:underline;">Termini e condizioni del servizio</a> &middot;
+                <a href="https://kingfx.eu/policies/contact-information" style="color:#fff; text-decoration:underline;">Contatti</a> &middot;
+                <a href="https://kingfx.eu/policies/legal-notice" style="color:#fff; text-decoration:underline;">Informativa legale</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Torna su">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Form handling con Netlify Forms
+        const applicationForm = document.getElementById('applicationForm');
+        const formMessage = document.getElementById('formMessage');
+
+        applicationForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Mostra messaggio di caricamento
+            formMessage.textContent = 'Invio in corso...';
+            formMessage.className = 'form-message';
+            formMessage.style.display = 'block';
+            
+            // Prepara i dati del form
+            const formData = new FormData(applicationForm);
+            
+            try {
+                // Invia il form a Netlify Forms
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                });
+                
+                if (response.ok) {
+                    // Successo
+                    formMessage.textContent = 'Grazie per la tua candidatura! Ti contatteremo presto.';
+                    formMessage.className = 'form-message success';
+                    applicationForm.reset();
+                    
+                    // Scroll alla sezione form per mostrare il messaggio
+                    document.getElementById('candidatura').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // Reset messaggio dopo 5 secondi
+                    setTimeout(() => {
+                        formMessage.textContent = '';
+                        formMessage.className = 'form-message';
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Errore nell\'invio');
+                }
+            } catch (error) {
+                // Errore
+                formMessage.textContent = 'Si è verificato un errore. Riprova più tardi o contattaci direttamente.';
+                formMessage.className = 'form-message error';
+            }
+        });
+
+        // Gestione campo condizionale "Altro" per situazione attuale
+        const situazioneSelect = document.getElementById('situazione');
+        const altroSituazioneGroup = document.getElementById('altro-situazione-group');
+        const altroSituazioneInput = document.getElementById('altro-situazione');
+
+        situazioneSelect.addEventListener('change', function() {
+            if (this.value === 'altro') {
+                altroSituazioneGroup.style.display = 'block';
+                altroSituazioneInput.setAttribute('required', 'required');
+            } else {
+                altroSituazioneGroup.style.display = 'none';
+                altroSituazioneInput.removeAttribute('required');
+                altroSituazioneInput.value = '';
+            }
+        });
+
+        // Gestione campo condizionale per esperienze
+        const esperienzeRadios = document.querySelectorAll('input[name="esperienze"]');
+        const descrizioneEsperienzeGroup = document.getElementById('descrizione-esperienze-group');
+        const descrizioneEsperienzeInput = document.getElementById('descrizione-esperienze');
+
+        esperienzeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'si') {
+                    descrizioneEsperienzeGroup.style.display = 'block';
+                    descrizioneEsperienzeInput.setAttribute('required', 'required');
+                } else {
+                    descrizioneEsperienzeGroup.style.display = 'none';
+                    descrizioneEsperienzeInput.removeAttribute('required');
+                    descrizioneEsperienzeInput.value = '';
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.style.display = 'flex';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+

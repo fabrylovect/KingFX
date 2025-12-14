@@ -33,6 +33,18 @@
   status = 200
   force = false
 
+[[redirects]]
+  from = "/lavoraconnoi"
+  to = "/lavoraconnoi/index.html"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/lavoraconnoi/"
+  to = "/lavoraconnoi/index.html"
+  status = 200
+  force = false
+
 # Headers per sicurezza e performance
 [[headers]]
   for = "/*"

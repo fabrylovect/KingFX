@@ -6,6 +6,8 @@
 /landing/     /landing/index.html    200
 /home         /home/index.html    200
 /home/        /home/index.html    200
+/lavoraconnoi /lavoraconnoi/index.html    200
+/lavoraconnoi/ /lavoraconnoi/index.html    200
 /             /home/index.html    200
 
 # Redirect alternativi (se il primo non funziona)
