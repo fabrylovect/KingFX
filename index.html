@@ -3,82 +3,515 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>King FX Financed - Trading Automatico Professionale</title>
-    <meta http-equiv="refresh" content="0; url=/home">
-    <link rel="canonical" href="/home">
-    <style>
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: #000000;
-            color: #ffffff;
-        }
-        .container {
-            text-align: center;
-            padding: 40px;
-        }
-        .logo {
-            max-width: 200px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            background: linear-gradient(270deg, #4b2eff, #a259ff, #4b2eff);
-            background-size: 400% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .link-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #4b2eff 60%, #a259ff 100%);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .link-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(162, 89, 255, 0.4);
-        }
-        .loading {
-            margin-top: 20px;
-            color: #bdbdff;
-        }
-    </style>
+    <title>KING EA - Software di Trading Automatico</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>King FX Financed</h1>
-        <p class="loading">Reindirizzamento in corso...</p>
-        <div class="links">
-            <a href="/home" class="link-button">Home Page</a>
-            <a href="/landing" class="link-button">Landing KING EA</a>
-        </div>
-        <p style="margin-top: 30px; color: #bdbdff; font-size: 0.9rem;">
-            Se non vieni reindirizzato automaticamente, clicca su uno dei pulsanti sopra.
-        </p>
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js">
+      {
+        "symbols": [
+          { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" },
+          { "proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD" },
+          { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+          { "description": "GOLD", "proName": "OANDA:XAUUSD" },
+          { "description": "GBP/USD", "proName": "OANDA:GBPUSD" },
+          { "description": "EUR/USD", "proName": "OANDA:EURUSD" },
+          { "description": "USD/JPY", "proName": "OANDA:USDJPY" },
+          { "description": "EUR/GBP", "proName": "OANDA:EURGBP" },
+          { "description": "EUR/JPY", "proName": "OANDA:EURJPY" },
+          { "description": "AUD/USD", "proName": "OANDA:AUDUSD" }
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": false,
+        "displayMode": "regular",
+        "colorTheme": "dark",
+        "locale": "it"
+      }
+      </script>
     </div>
+    <!-- TradingView Widget END -->
+
+    <!-- Navbar Minimal -->
+    <nav class="navbar-minimal">
+        <ul>
+            <li><a href="/home">HOME</a></li>
+            <li><a href="#vantaggi">Vantaggi</a></li>
+            <li><a href="#software">Software</a></li>
+            <li><a href="#risultati">Risultati</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li>
+                <a href="https://www.instagram.com/peppe_fx/" target="_blank" class="navbar-social navbar-instagram" title="Instagram KingFX">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://t.me/+9g76ARt6yW9lMTI0" target="_blank" class="navbar-social navbar-telegram" title="Telegram KingFX">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Fine Navbar -->
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <a href="/home" class="logo-link">
+                    <img src="KING FX FINANCED_trasp.png" alt="King FX Logo" class="logo">
+                </a>
+                <div class="hero-main">
+                    <div class="hero-text">
+                        <h1 class="hero-title">KING EA<br> Software di Trading Automatico</h1>
+                        <p class="subtitle">Trading automatizzato 24/7 con rendimenti stimati<br> dal 7% al 15% mensile.</p>
+                        <a href="https://buy.stripe.com/7sYdR9frf8Au6tt0Lz0sU08" target="_blank" class="cta-button">Acquista</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="KING EA_trasp.png" alt="KING EA Software" class="king-ea-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Vantaggi Section -->
+    <section class="benefits" id="vantaggi">
+        <div class="container">
+            <h2>Vantaggi di KING EA</h2>
+            <div class="benefits-banner">
+                <span class="benefits-banner-icon"><i class="fas fa-award"></i></span>
+                <span class="benefits-banner-text">Software Professionale</span>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Trading 100% Automatico</h3>
+                    <p>Il sistema opera autonomamente 24/7 senza necessità di intervento manuale</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Strategia Sicura</h3>
+                    <p>Algoritmi progettati per minimizzare il drawdown e proteggere il capitale</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Rendimenti Stimati</h3>
+                    <p>Dal 7% al 15% mensile con gestione del rischio ottimizzata</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Scalabilità Automatica</h3>
+                    <p>Il sistema scala automaticamente l'esposizione in base al capitale disponibile</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Monitoraggio H24</h3>
+                    <p>Controllo costante dei mercati e degli investimenti in tempo reale</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Pagamento Rateizzato</h3>
+                    <p>Acquista e paga in 3/4 rate con Klarna</p>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:32px;">
+                <a href="https://t.me/Peppe_Fx" target="_blank" class="telegram-button">
+                    <i class="fab fa-telegram"></i>
+                    Contattaci
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Automatico Section -->
+    <section class="auto-trading ai-section" id="software">
+        <div class="ai-title">
+            <h2 class="ai-title-h2"> Il Nostro Software</h2>
+        </div>
+        <div class="ai-top ai-top-vertical">
+            <div class="ai-icon-box">
+                <img src="KING EA_trasp.png" alt="King EA Trading Intelligente" class="ai-img-box" />
+            </div>
+            <div class="ai-banner ai-banner-centered">
+                <i class="fas fa-chart-line"></i> <span>Rendimento Stimato: <b>7% - 15% Mensile</b></span>
+            </div>
+        </div>
+        <div class="ai-features">
+            <div class="ai-feature-card">
+                <span class="ai-feature-icon"><i class="fas fa-cogs"></i></span>
+                <div>
+                    <div class="ai-feature-title">Operatività 100% Automatizzata</div>
+                    <div class="ai-feature-desc">Il sistema opera autonomamente 24/7 senza necessità di intervento manuale</div>
+                </div>
+            </div>
+            <div class="ai-feature-card">
+                <span class="ai-feature-icon"><i class="fas fa-shield-alt"></i></span>
+                <div>
+                    <div class="ai-feature-title">Strategia "Safe" a Basso Rischio</div>
+                    <div class="ai-feature-desc">Algoritmi progettati per minimizzare il drawdown e proteggere il capitale</div>
+                </div>
+            </div>
+            <div class="ai-feature-card">
+                <span class="ai-feature-icon"><i class="fas fa-balance-scale"></i></span>
+                <div>
+                    <div class="ai-feature-title">Proporzionale al Capitale</div>
+                    <div class="ai-feature-desc">Il sistema scala automaticamente l'esposizione in base al capitale disponibile</div>
+                </div>
+            </div>
+            <div class="ai-feature-card">
+                <span class="ai-feature-icon"><i class="fas fa-clock"></i></span>
+                <div>
+                    <div class="ai-feature-title">Monitoraggio Continuo H24</div>
+                    <div class="ai-feature-desc">Controllo costante dei mercati e degli investimenti in tempo reale</div>
+                </div>
+            </div>
+            <div class="ai-feature-card">
+                <span class="ai-feature-icon"><i class="fas fa-credit-card"></i></span>
+                <div>
+                    <div class="ai-feature-title">Disponibile pagamento a rate</div>
+                    <div class="ai-feature-desc">Acquista e paga in 3/4 rate con Klarna</div>
+                </div>
+            </div>
+            <div class="ai-feature-card ai-widget-card">
+                <div style="text-align:center; margin-bottom: 20px;">
+                    <a href="https://www.myfxbook.com/portfolio/king-fx-pro/11607997" target="_blank" class="myfxbook-button-landing">
+                        <i class="fas fa-external-link-alt"></i>
+                        Visualizza su Myfxbook
+                    </a>
+                </div>
+                <div style="text-align:center; margin-top: 20px;">
+                    <a href="https://www.myfxbook.com/members/fabrylovect/king-fx-pro/11607997" target="_blank" class="myfxbook-widget-link-landing">
+                        <img alt="widget" src="https://widget.myfxbook.com/widget/widget.png?accountOid=11607997&type=6" class="myfxbook-widget-image-landing"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-top:32px;">
+            <a href="https://t.me/Peppe_Fx" target="_blank" class="telegram-button">
+                <i class="fab fa-telegram"></i>
+                Contattaci
+            </a>
+        </div>
+    </section>
+
+    <!-- Risultati Section -->
+    <section class="results-section" id="risultati">
+        <div class="container">
+            <h2 class="section-title">Risultati Reali</h2>
+            <p style="text-align: center; color: #bdbdff; font-size: 1.1rem; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Guarda i risultati ottenuti dai nostri trader con KING EA
+            </p>
+            <div class="results-carousel-container">
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Immagine precedente">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="results-carousel">
+                    <div class="results-track" id="resultsTrack">
+                        <!-- Immagini esistenti -->
+                        <div class="result-card active">
+                            <img src="Risultati/jacopo feed.png" alt="Jacopo Feed" class="result-image">
+                        </div>
+                        <!-- Nuove immagini -->
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-08-06_10-25-56.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-08-06_10-25-58.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-08-06_10-25-58 (2).jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-08-06_10-25-59.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-10-10_19-05-35.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-10-10_19-09-07.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-30.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-30 (2).jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-31.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/photo_2025-11-10_03-07-49.jpg" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Screenshot_20251102_164018_MetaTrader 5.jpg" alt="Screenshot MetaTrader 5" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Screenshot_20251102_164243_MetaTrader 5.jpg" alt="Screenshot MetaTrader 5" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Screenshot_20251102_164315_MetaTrader 5.jpg" alt="Screenshot MetaTrader 5" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Senza titolo.png" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <div class="result-card">
+                            <img src="Risultati/Senza titolo2.png" alt="Risultati Trading" class="result-image">
+                        </div>
+                        <!-- Video -->
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-33.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-43.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-48.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                        <div class="result-card">
+                            <video class="result-video" controls>
+                                <source src="Risultati/video_2025-11-10_02-58-53.mp4" type="video/mp4">
+                                Il tuo browser non supporta il tag video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Immagine successiva">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- I dots verranno generati dinamicamente dal JavaScript -->
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:32px;">
+                <a href="https://t.me/Peppe_Fx" target="_blank" class="telegram-button">
+                    <i class="fab fa-telegram"></i>
+                    Contattaci per maggiori informazioni
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Domande Frequenti</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>🤖 Come funziona KING EA?</h3>
+                    <p>KING EA è un software di trading automatico che opera 24/7 sui mercati finanziari. Una volta installato e configurato sul tuo account di trading, il sistema analizza i mercati e apre/chiude posizioni automaticamente seguendo la strategia predefinita.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>📈 Quali sono i rendimenti attesi?</h3>
+                    <p>I rendimenti stimati sono compresi tra il 7% e il 15% mensile. Questi risultati sono basati su backtest e performance storiche, ma ricordiamo che i risultati passati non garantiscono performance future.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>🛡️ Qual è il rischio associato?</h3>
+                    <p>KING EA utilizza una strategia "Safe" progettata per minimizzare il drawdown e proteggere il capitale. Il sistema include sistemi di gestione del rischio integrati, ma il trading comporta sempre un rischio di perdita.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>⚙️ Ho bisogno di competenze tecniche per utilizzarlo?</h3>
+                    <p>No, KING EA è progettato per essere utilizzato anche da chi non ha esperienza nel trading. Forniamo supporto completo per l'installazione e la configurazione iniziale.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>💰 Come posso acquistare KING EA?</h3>
+                    <p>Contattaci su Telegram per maggiori informazioni su prezzi e modalità di pagamento. Offriamo anche la possibilità di pagare in 3/4 rate con Klarna</p>
+                </div>
+                <div class="faq-item">
+                    <h3>🔄 Su quali broker funziona?</h3>
+                    <p>KING EA è compatibile con MetaTrader 4 e MetaTrader 5. Può essere utilizzato con qualsiasi broker che supporta queste piattaforme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="contatti">
+        <div class="container">
+            <h2 class="final-cta-title">KING EA non è per tutti.<br> È per chi vuole fare trading sul serio.</h2>
+            <a href="https://t.me/Peppe_Fx" target="_blank" class="telegram-button">
+                <i class="fab fa-telegram"></i>
+                Contattaci su Telegram
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 32px 0 0 0;">
+            <div style="text-align:center; color:#fff; font-size:1.05rem; margin-bottom: 4px;">
+                King FX © 2025 - All rights reserved
+            </div>
+            <div style="text-align:center; color:#fff; font-size:1.05rem; margin-bottom: 12px;">
+                <a href="mailto:info@kingfx.eu" style="color:#fff; text-decoration:underline;">info@kingfx.eu</a>
+            </div>
+            <div style="text-align:center; color:#fff; font-size:0.98rem; line-height:1.7; max-width: 98vw;">
+                <a href="/privacy" style="color:#fff; text-decoration:underline;">Privacy & Cookie Policy</a> &middot;
+                <a href="/terms" style="color:#fff; text-decoration:underline;">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Reindirizzamento automatico dopo 2 secondi
-        setTimeout(function() {
-            window.location.href = '/home';
-        }, 2000);
+    // Carosello Risultati
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.result-card');
+    const track = document.getElementById('resultsTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const carouselDots = document.getElementById('carouselDots');
+    const totalSlides = slides.length;
+
+    // Genera i dots dinamicamente
+    function generateDots() {
+        carouselDots.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('data-slide', i);
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        }
+    }
+
+    function updateCarousel() {
+        // Rimuovi active da tutte le card e dots
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if (index === currentSlide) {
+                slide.classList.add('active');
+            }
+        });
+        
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === currentSlide) {
+                dot.classList.add('active');
+            }
+        });
+
+        // Sposta il track
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Auto-scroll (opzionale)
+    let autoScrollInterval = setInterval(nextSlide, 5000);
+
+    // Pausa auto-scroll al hover
+    const carouselContainer = document.querySelector('.results-carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoScrollInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoScrollInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Inizializza
+    generateDots();
+    updateCarousel();
+
+    // INSERISCI QUI LA TUA API KEY DI TWELVE DATA
+    const API_KEY = '8a9cfb4fdc3746ef96e3bab5aeac028e';
+    const symbols = {
+        sp500: 'SPX',
+        nasdaq: 'NDX',
+        eurusd: 'EUR/USD',
+        btcusd: 'BTC/USD',
+        ethusd: 'ETH/USD'
+    };
+    async function fetchQuote(symbol, elementId) {
+        try {
+            const url = `https://api.twelvedata.com/quote?symbol=${encodeURIComponent(symbol)}&apikey=${API_KEY}`;
+            const res = await fetch(url);
+            const data = await res.json();
+            if (data.price && data.percent_change) {
+                document.querySelector(`#${elementId} .price`).textContent = data.price;
+                const change = `${data.change} (${data.percent_change}%)`;
+                const changeElem = document.querySelector(`#${elementId} .change`);
+                changeElem.textContent = change;
+                changeElem.classList.remove('positive', 'negative');
+                if (parseFloat(data.percent_change) > 0) {
+                    changeElem.classList.add('positive');
+                } else if (parseFloat(data.percent_change) < 0) {
+                    changeElem.classList.add('negative');
+                }
+            }
+        } catch (e) {
+            // fallback in caso di errore
+            document.querySelector(`#${elementId} .price`).textContent = '--';
+            document.querySelector(`#${elementId} .change`).textContent = '--';
+        }
+    }
+    function updateQuotes() {
+        for (const [id, symbol] of Object.entries(symbols)) {
+            fetchQuote(symbol, id);
+        }
+    }
+    updateQuotes();
+    setInterval(updateQuotes, 60000); // aggiorna ogni minuto
+    </script>
+
+    <defs>
+        <linearGradient id="ai-gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#4b2eff"/>
+            <stop offset="1" stop-color="#6c63ff"/>
+        </linearGradient>
+    </defs>
+
+    <button id="scrollToTopBtn" class="scroll-to-top" title="Torna su">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+    // Pulsante scroll to top
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'flex';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
     </script>
 </body>
-</html>
-
+</html> 
